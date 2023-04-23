@@ -4,11 +4,10 @@ const router = express.Router();
 const {
   getAllProducts,
   createProduct,
-  updateProduct,
 } = require('../controllers/productsController');
-const { uploadProductImageLocal } = require('../controllers/uploadController');
+const { uploadProductImage } = require('../controllers/uploadController');
 
 router.route('/').post(createProduct).get(getAllProducts);
-router.route('/uploads').post(uploadProductImageLocal);
+router.route('/uploads').post(uploadProductImage);
 
 module.exports = router;
